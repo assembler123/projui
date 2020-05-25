@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIT| SERVERS</title>
+</head>
+
+<body class='bg-bod-cust'>
+    <div class='container-fluid mt-15 '>
+        <div class='wave'>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0099ff20" fill-opacity="1" d="M0,256L48,229.3C96,203,192,149,288,144C384,139,480,181,576,170.7C672,160,768,96,864,74.7C960,53,1056,75,1152,74.7C1248,75,1344,53,1392,42.7L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+        </div>
+        <div class='nlstr text-left ' id='qps'>
+            <p data-opt='home' class="applse"><i class="fas fa-home "></i></p>
+            <p data-opt='sinf'><i class="fas fa-server"></i></p>
+            <p data-opt='brand'><i class="fas fa-atlas"></i></p>
+            <p data-opt='appl'> <i class="far fa-hdd"></i></p>
+            <p><i class="fas fa-phone-volume"></i> </p>
+        </div>
+        <div class='row text-left'>
+            <div class='col-md-12 bg-my-top boder m-cust'>
+                <i style='font-size:23px;' onclick="toggle(this)" class="fas fa-bars"></i>
+                <span class="text-muted float-right">
+                <input type='checkbox' id='toggle' onchange="activeTheme(this)"/>
+                <label for='toggle' class='ffd'> 
+                    <span class='part1'></span>
+                </label>
+                </span>
+            </div>
+            <div class='col-md-2 bg-white p-0 hvh' id='sdr'>
+                <div id='side'>
+                    <p class='txp tacv' onclick='routeTo(this)' data-opt='home'> <i class="fas fa-home"></i> Home</p>
+                    <p class='txp' onclick='routeTo(this)' data-opt='sinf'><i class="fas fa-server"></i> Server Info</p>
+                    <p class='txp' onclick='routeTo(this)' data-opt='brand'> <i class="fas fa-atlas"></i> Brands</p>
+                    <p class='txp' onclick='routeTo(this)' data-opt='appl'> <i class="far fa-hdd"></i> Appliances</p>
+                    <p class='txp' onclick='routeTo(this)'> &nbsp; <i class="fas fa-phone-volume"></i> IVR</p>
+                </div>
+            </div>
+            <div class='offset-md-1 col-md-9 mt-2' id='prrety'>
+
+                <div class='table-responsive-md' id='rtt'>
+                    <div class='row'>
+                        <div class='offset-md-1 col-md-4 mt-100'>
+                            <div class="card shadow border-none bg-wh">
+                                <div class="card-body text-center border-none">
+                                    <div class="tro">
+                                        <img src="./forms.svg" alt="" srcset="" height='125px'>
+                                        <h4>Brands Registered</h4>
+                                        16
+                                        <br/>
+                                        <button onclick="routeTo(this)" data-opt='brand'>Check Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class='offset-md-1 col-md-4 mt-100'>
+                            <div class="card shadow border-none bg-wh">
+                                <div class="card-body text-center border-none">
+                                    <div class="tro">
+                                        <img src="./housework.svg" alt="" srcset="" height='125px'>
+                                        <h4>Appliances</h4>
+                                        5
+                                        <br/>
+                                        <button onclick="routeTo(this)" data-opt='appl'>Check Now</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class='offset-md-1 col-md-4 mt-100'>
+                            <div class="card shadow border-none bg-wh">
+                                <div class="card-body text-center border-none">
+                                    <div class="tro">
+                                        <img src="./server.svg" alt="" srcset="" height='125px'>
+                                        <h4>Servers Running</h4>
+                                        2
+                                        <br/>
+                                        <button onclick="routeTo(this)" data-opt='sinf'> Check Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class='offset-md-1 col-md-4 mt-100'>
+                            <div class="card shadow border-none bg-wh">
+                                <div class="card-body text-center border-none">
+                                    <div class="tro">
+                                        <img src="./ivr.svg" alt="" srcset="" height='125px'>
+                                        <h4>IVR Counts</h4>
+                                        14
+                                        <br/>
+                                        <button onclick="routeTo(this)" disabled>Check Now</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .bg-my-top {
+        background: var(--bg-top);
+        color: var(--txt-my-top);
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .bg-bod-cust {
+        background: var(--bgmain);
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .bg-wh {
+        transition: all 0.3s ease-in-out;
+        background: var(--bgoth) !important;
+        color: var(--txt-dr-primary);
+    }
+    
+    .bg-wh h4 {
+        margin-top: 10px;
+        color: var(--txt-dr-secondry);
+    }
+    
+    .txp {
+        padding: 10px 15px;
+        cursor: pointer;
+        margin-bottom: 10px;
+        font-size: 18px;
+        color: #646464;
+        font-weight: 600;
+        color: var(--side-txt)
+    }
+    
+    .txp:hover {
+        color: #343434;
+        background: #e9e9e9;
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+    
+    .mt-15 {
+        margin-top: 10px;
+    }
+    
+    .mt-100 {
+        margin-top: 60px
+    }
+    
+    .tro {
+        transform: translateY(-25%);
+    }
+    
+    .tro button {
+        font-size: 14px;
+        padding: 8px 15px;
+        background: linear-gradient(to right, #1abc9c 50%, #fff 50%);
+        background-size: 200%;
+        font-weight: 600;
+        color: #f1f1f1;
+        border: 1px solid #464646;
+        transition: all 0.2s ease-in-out;
+    }
+    
+    .tro button:hover {
+        background-position: right;
+        color: #343434;
+    }
+    
+    .tro img {
+        height: 100px;
+    }
+    
+    .tacv {
+        background: linear-gradient(to left, #f2709c, #ff9472);
+        box-shadow: 2px 5px 10px rgba(242, 112, 155, 0.75);
+        /*   border-radius:0px 50px 50px 0px; */
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        color: #fff
+    }
+    
+    .tacv:hover {
+        background: linear-gradient(to left, #f2709c, #ff9472);
+        color: #fff;
+        cursor: click;
+    }
+    
+    .txp i {
+        padding: 5px 10px;
+        margin-left: 50px;
+        justify-content: center;
+    }
+    
+    .nlstr {
+        padding-top: 50px;
+        height: 100vh;
+        width: 50px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: red;
+        z-index: 2;
+        background: linear-gradient(to bottom, #005aa7, #fffde4);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to top, #2980b9, #0083B0, #6dd5fa);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+    
+    .nlstr i {
+        padding: 15px 5px;
+        font-size: 25px;
+        color: inherit;
+        padding-left: 7px;
+        border-left: 4px solid transparent;
+    }
+    
+    .applse {
+        border-left: 4px solid #f1f1f1 !important;
+        color: #fff;
+    }
+    
+    .nlstr {
+        color: #f1f1f1;
+    }
+    
+    .table td {
+        max-width: 150px;
+        overflow: auto;
+    }
+    
+    .hvh {
+        height: 92vh;
+        border-right: var(--mcusborder);
+        background: var(--bg-top) !important;
+    }
+    
+    .m-cust {
+        margin-top: -15px;
+        padding: 15px 55px;
+        border-bottom: var(--mcusborder);
+    }
+    
+    #sdr {
+        transition: all 0.3s ease-in;
+    }
+    
+    #prrety {
+        transform: translateX(-100px);
+        transition: all 0.3s ease-in;
+        height: 88vh;
+        overflow-y: auto;
+    }
+    
+    .border-none {
+        border: 0px;
+    }
+    
+    .part1 {
+        width: 20px;
+        height: 20px;
+        background: #fff;
+        transition: all 0.4s linear;
+        display: inline-block;
+        position: absolute;
+        left: 10%;
+        border-radius: 50%;
+    }
+    
+    .ffd {
+        background: #95a5a6;
+        position: relative;
+        display: block;
+        width: 40px;
+        height: 25px;
+        padding: 2.5px;
+        transition: all 0.4s ease-out;
+        border-radius: 1100px;
+    }
+    
+    input:checked~.ffd>.part1 {
+        left: 40%;
+    }
+    
+    input:checked~.ffd {
+        background: #1abc9c;
+    }
+    
+    input[type='checkbox'] {
+        display: none;
+    }
+    
+    .wave {
+        position: absolute;
+        top: 100%;
+        left: 0%;
+        width: 100%;
+        transform: translateY(-100%);
+    }
+</style>
+<script>
+    let roots = document.documentElement;
+    roots.style.setProperty('--bgmain', '#f8f9fa');
+    roots.style.setProperty('--bgoth', '#fff');
+    roots.style.setProperty('--bg-top', '#fff');
+    roots.style.setProperty('--txt-my-top', '#343434');
+    roots.style.setProperty('--txt-dr-secondry', '#343434');
+    roots.style.setProperty("--txt-dr-primary", "#232323");
+    roots.style.setProperty("--mcusborder", "1px solid #e1e1e1");
+    roots.style.setProperty("--side-txt", "#646464");
+
+
+
+    routeTo = (e) => {
+        let jp = document.getElementById('qps').children;
+        console.log(jp)
+        if (e.getAttribute('data-opt') == 'home')
+            document.getElementById('rtt').innerHTML = `                    <div class='row'>
+                        <div class='offset-md-1 col-md-4 mt-100'>
+                            <div class="card shadow border-none bg-wh">
+                                <div class="card-body text-center border-none">
+                                    <div class="tro">
+                                        <img src="./forms.svg" alt="" srcset="" height='125px'>
+                                        <h4>Brands Registered</h4>
+                                        16
+                                        <br/>
+                                        <button>Check Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class='offset-md-1 col-md-4 mt-100'>
+                            <div class="card shadow border-none bg-wh">
+                                <div class="card-body text-center border-none">
+                                    <div class="tro">
+                                        <img src="./housework.svg" alt="" srcset="" height='125px'>
+                                        <h4>Appliances</h4>
+                                        5
+                                        <br/>
+                                        <button>Check Now</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class='offset-md-1 col-md-4 mt-100'>
+                            <div class="card shadow border-none bg-wh">
+                                <div class="card-body text-center border-none">
+                                    <div class="tro">
+                                        <img src="./server.svg" alt="" srcset="" height='125px'>
+                                        <h4>Servers Running</h4>
+                                        2
+                                        <br/>
+                                        <button> Check Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class='offset-md-1 col-md-4 mt-100'>
+                            <div class="card shadow border-none bg-wh">
+                                <div class="card-body text-center border-none">
+                                    <div class="tro">
+                                        <img src="./ivr.svg" alt="" srcset="" height='125px'>
+                                        <h4>IVR Counts</h4>
+                                        14
+                                        <br/>
+                                        <button>Check Now</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+        `;
+        else if (e.getAttribute('data-opt') == 'sinf') {
+            document.getElementById('rtt').innerHTML = '<div class="jumbotron text-center"><div class="spinner-border" role="status"><span class="sr-only">Loading...</span></div></div>';
+
+            fetch('https://us-central1-sit-app-interchannel.cloudfunctions.net/api/chat-server').then(r => {
+
+                r.json().then(re => {
+                    console.log(re);
+                    let ob = re[0];
+                    console.dir(ob);
+                    let ke = Object.keys(ob);
+                    console.log(ke);
+                    let toset = '<table class="table table-striped  table-hover table-light"><thead class="bg-primary text-white"><tr>';
+                    for (let i = 0; i < ke.length; i++) {
+                        toset += '<th>' + ke[i] + '</th>';
+                    }
+                    toset += '</tr></thead><tbody>';
+
+                    for (let i = 0; i < re.length; i++) {
+                        toset += '<tr>';
+                        console.log("=--", re[i]);
+
+                        for (let j = 0; j < ke.length; j++) {
+                            if (ke[j] == 'timestamp') {
+                                let dp = Date(parseInt(re[i][ke[j]]._seconds))
+                                console.log(dp);
+                                toset += `<td class='text-muted' style='font-size:12px'>${dp}</td>`;
+                            } else
+                                toset += `<td>${re[i][ke[j]]?re[i][ke[j]]:'-'}</td>`
+                        }
+                        toset += '</tr>'
+                    }
+                    toset += '</tbody></table>'
+
+                    document.getElementById('rtt').innerHTML = toset
+
+                    console.log(r);
+                })
+
+            })
+        } else if (e.getAttribute('data-opt') == 'brand') {
+            document.getElementById('rtt').innerHTML = '<div class="jumbotron text-center"><div class="spinner-border" role="status"><span class="sr-only">Loading...</span></div></div>';
+
+            fetch('https://us-central1-sit-app-interchannel.cloudfunctions.net/api/brand').then(r => {
+
+                r.json().then(re => {
+                    console.log(re);
+                    let ob = re[0];
+                    console.dir(ob);
+                    let ke = Object.keys(ob);
+
+                    console.log(ke);
+
+                    let toset = '<table class="table  table-striped table-bordered table-hover table-light "><thead class="thead-dark"><tr>';
+                    for (let i = 0; i < ke.length; i++) {
+                        toset += '<th>' + ke[i] + '</th>';
+                    }
+                    toset += '</tr></thead><tbody>';
+
+                    for (let i = 0; i < re.length; i++) {
+                        toset += '<tr>';
+                        console.log("=--", re[i]);
+
+                        for (let j = 0; j < ke.length; j++) {
+                            if (ke[j] == 'logo_url') {
+                                toset += `<td><img src='${re[i][ke[j]]?re[i][ke[j]]:'https://via.placeholder.com/50'}' height='40px'/></td>`
+                            } else if (ke[j] == 'timestamp') {
+                                let dp = Date('Y/m/d', parseInt(re[i][ke[j]]._seconds))
+                                console.log(dp);
+                                toset += `<td class='text-muted' style='font-size:12px'>${dp}</td>`
+                            } else
+                                toset += `<td>${re[i][ke[j]]?re[i][ke[j]]:'-'}</td>`
+                        }
+                        toset += '</tr>'
+                    }
+                    toset += '</tbody></table>'
+
+                    document.getElementById('rtt').innerHTML = toset
+
+                    console.log(r);
+                })
+
+            })
+        } else if (e.getAttribute('data-opt') == 'appl') {
+            document.getElementById('rtt').innerHTML = '<div class="jumbotron text-center"><div class="spinner-border" role="status"><span class="sr-only">Loading...</span></div></div>';
+
+            fetch('https://us-central1-sit-app-interchannel.cloudfunctions.net/api/appliance-type').then(r => {
+
+                r.json().then(re => {
+
+                    console.log(re);
+                    console.log("LOADNNNNNHGG!!!")
+                    let ob = re[0];
+                    console.dir(ob);
+                    let ke = Object.keys(ob);
+
+                    console.log(ke);
+
+                    let toset = '<table class="table  table-striped table-bordered table-hover table-light"><thead class="thead-dark"><tr>';
+                    for (let i = 0; i < ke.length; i++) {
+                        toset += '<th>' + ke[i] + '</th>';
+                    }
+                    toset += '</tr></thead><tbody>';
+
+                    for (let i = 0; i < re.length; i++) {
+                        toset += '<tr>';
+                        console.log("=--", re[i]);
+
+                        for (let j = 0; j < ke.length; j++) {
+                            if (ke[j] == 'timestamp') {
+                                let dp = Date('Y/m/d', parseInt(re[i][ke[j]]._seconds))
+                                console.log(dp);
+
+                                toset += `<td class='text-muted' style='font-size:12px'>${dp}</td>`
+                            } else
+                                toset += `<td>${re[i][ke[j]]}</td>`
+                        }
+                        toset += '</tr>'
+                    }
+                    toset += '</tbody></table>'
+
+                    document.getElementById('rtt').innerHTML = toset
+
+                    console.log(r);
+                })
+
+            })
+        }
+        let dl = document.getElementById('side').children;
+        for (let i = 0; i < dl.length; i++)
+            dl[i].className = 'txp'
+        console.log(dl);
+        console.dir(e)
+        e.classList.add('tacv');
+    }
+    toggle = (e) => {
+        let sd = document.getElementById('sdr');
+        console.log(sd.style);
+
+        if (sd.style.transform == '') {
+            document.getElementById('prrety').style = 'transform:translateX(-200px)';
+            document.getElementById('sdr').style = 'transform:translateX(-100%) '
+        } else {
+
+            document.getElementById('prrety').style = 'transform:translateX(-100px)';
+            document.getElementById('sdr').style = '';
+        }
+
+        console.log("--->>>", );
+    }
+    activeTheme = (e) => {
+        console.log(document.documentElement);
+        // document.documentElement.style.setProperty()
+        let root = document.documentElement;
+        if (root.style.getPropertyValue('--bgmain') == '#f8f9fa') {
+            root.style.setProperty("--bgmain", "#343434");
+            root.style.setProperty("--bgoth", "#565656");
+            root.style.setProperty('--bg-top', '#434343');
+            root.style.setProperty('--txt-my-top', '#e9e9e9');
+            root.style.setProperty("--txt-dr-secondry", "#f3f3f3");
+            root.style.setProperty("--txt-dr-primary", "#d3d3d3");
+            root.style.setProperty("--mcusborder", "none");
+            root.style.setProperty("--side-txt", "#ececec");
+
+
+        } else {
+            root.style.setProperty('--bgmain', '#f8f9fa')
+            root.style.setProperty("--bgoth", "#fff");
+            root.style.setProperty('--bg-top', '#fff');
+            root.style.setProperty('--txt-my-top', '#343434');
+            root.style.setProperty("--txt-dr-secondry", "#343434");
+            root.style.setProperty("--txt-dr-primary", "#232323");
+            root.style.setProperty("--mcusborder", "1px solid #ececec");
+            root.style.setProperty("--side-txt", "#646464");
+
+
+        }
+        console.log(document.documentElement);
+    }
+</script>
